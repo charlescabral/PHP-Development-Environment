@@ -3,9 +3,9 @@ services:
   mysql:
     image: mysql:8.0
     container_name: playground-db
-    working_dir: /app
+    working_dir: /www
     volumes:
-      - ./app/:/app
+      - ./www/:/www
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=playground
@@ -15,31 +15,27 @@ services:
       - "3306:3306"
     networks:
       - playground
-
-
   nginx:
     image: nginx:latest
     container_name: playground-nginx
-    working_dir: /app
+    working_dir: /www
     ports:
       - "80:80"
     depends_on:
       - php
     volumes:
-      - ./app/:/app
+      - ./www/:/www
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - playground
-
   php:
     build: docker/php
     container_name: playground-php
-    working_dir: /app
+    working_dir: /www
     volumes:
-      - ./app/:/app
+      - ./www/:/www
     networks:
       - playground
-
   mailhog:
     image: mailhog/mailhog:latest
     container_name: playground-mailhog
@@ -48,7 +44,6 @@ services:
       - "8025:8025"
     networks:
       - playground
-
 networks:
   playground:
     driver: bridge
