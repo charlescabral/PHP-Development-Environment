@@ -1,5 +1,5 @@
-
 <?php require "../init.php"; ?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -19,7 +19,7 @@
 
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
-                    <span class="mdl-layout-title">Learning PHP</span>
+                    <span class="mdl-layout-title">PHP Playground</span>
                 </div>
             </header>
 

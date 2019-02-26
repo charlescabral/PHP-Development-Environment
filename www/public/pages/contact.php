@@ -14,6 +14,8 @@
                         <span class="mdl-textfield__error">Email inválido, my friend..</span>
                     </div>
 
+                    <?= get('message'); ?>
+
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                         Cadastrar
                     </button>
