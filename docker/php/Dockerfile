@@ -31,9 +31,9 @@ RUN docker-php-ext-install \
 COPY ./custom.ini /usr/local/etc/php/conf.d/custom.ini
 
 # Install selected extensions and other stuff
-RUN apt-get update \
-    && apt-get -y --no-install-recommends install  php7.3-mysql \
-    && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+# RUN apt-get update \
+#     && apt-get -y --no-install-recommends install  php7.2-mysql \
+#     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 # Install MailHog
 COPY ./mailhog.ini /usr/local/etc/php/conf.d/mailhog.ini

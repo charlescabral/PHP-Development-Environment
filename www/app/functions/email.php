@@ -1,16 +1,5 @@
 <?php
 
-// function send($data) {
-// 	$to = 'xandecar@hotmail.com';
-// 	$subject = $data->subject;
-// 	$message = $data->message;
-// 	$headers = "From: {$data->email}" . "\r\n" .
-// 	'Reply-To: contato@devclass.com.br' . "\r\n" .
-// 	'X-Mailer: PHP/' . phpversion();
-
-// 	return mail($to, $subject, $message, $headers);
-// }
-
 function send(array $data) {
 	$email = new PHPMailer\PHPMailer\PHPMailer;
 	$email->CharSet = 'UTF-8';
