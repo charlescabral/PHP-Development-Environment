@@ -9,6 +9,8 @@ services:
       MYSQL_DATABASE: playground
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./docker/dumps/:/docker-entrypoint-initdb.d
     networks:
       - playground
   nginx:
