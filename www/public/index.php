@@ -7,7 +7,9 @@ use app\classes\Layout;
 $routes = [
 	'/' => 'controllers/index',
 	'/signup' => 'controllers/signup',
-	'/user_store' => 'controllers/user_store'
+	'/user_store' => 'controllers/user_store',
+	'/user_edit' => 'controllers/user_edit',
+	'/user_update' => 'controllers/user_update'
 ];
 
 $uri = Uri::load();

@@ -14,6 +14,15 @@
                             <?=$user->name;?>
                             <span class="mdl-list__item-sub-title"><?=$user->email;?></span>
                         </span>
+
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="/user_edit?id=<?=$user->id;?>">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="id=<?=$user->id;?>">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </span>
                     </li>
                 <?php endforeach; ?>
             </ul>

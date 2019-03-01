@@ -1,13 +1,17 @@
 <?php namespace app\models;
 
+use app\classes\Bind;
 use app\models\Connection;
+use app\traits\PersistDb;
 
 abstract class Model {
+
+	use PersistDb;
 
 	protected $connection;
 
 	public function __construct() {
-		$this->connection = Connection::connect();
+		$this->connection = Bind::get('connection');
 	}
 
 	public function all() {

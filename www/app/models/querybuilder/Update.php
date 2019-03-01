@@ -22,6 +22,7 @@ class Update {
 			$sql .= "{$key} = :{$key}, ";
 		}
 
+		// Remove a virgula e espaço no final da string
 		$sql = rtrim($sql, ', ');
 
 		$where = array_keys($this->where);
