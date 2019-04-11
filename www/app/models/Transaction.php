@@ -11,14 +11,10 @@ class Transaction extends Model {
 		$this->connection->beginTransaction();
 
 		try {
-
 			$callback();
-
 			$this->connection->commit();
-
 		} catch (\Throwable $e) {
 			$this->connection->rollback();
-
 			dd($e->getMessage());
 		}
 

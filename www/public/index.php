@@ -9,7 +9,8 @@ $routes = [
 	'/signup' => 'controllers/signup',
 	'/user_store' => 'controllers/user_store',
 	'/user_edit' => 'controllers/user_edit',
-	'/user_update' => 'controllers/user_update'
+	'/user_update' => 'controllers/user_update',
+	'/user_delete' => 'controllers/user_delete'
 ];
 
 $uri = Uri::load();

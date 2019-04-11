@@ -36,10 +36,10 @@ abstract class Model {
 		return $list->fetch();
 	}
 
-	public function delete() {
-		$sql = "delete from {$this->table} where $field = ?";
+	public function delete($id) {
+		$sql = "delete from {$this->table} where id = ?";
 		$delete = $this->connection->prepare($sql);
-		$delete->bindValue(1, $value);
+		$delete->bindValue(1, $id);
 		$delete->execute();
 
 		return $delete->rowCount();

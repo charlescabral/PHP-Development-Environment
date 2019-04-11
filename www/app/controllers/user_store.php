@@ -12,7 +12,13 @@ $transaction = new Transaction;
 
 $transaction->transactions(function () use ($transaction, $validate) {
 
-	$transaction->model(User::class)->insert($validate);
+	$inserted = $transaction->model(User::class)->insert($validate);
+	// dd($inserted);
+
+
+	if ($inserted) {
+		header('location:/');
+	}
 
 	$transaction->model(Post::class)->insert([
 		'title' => 'teste',
@@ -21,13 +27,3 @@ $transaction->transactions(function () use ($transaction, $validate) {
 	]);
 
 });
-
-// $validation = new Validation;
-// $validate = $validation->validate($_POST);
-
-// $user = new app\models\User;
-// $cadastrado = $user->insert($validate);
-
-// if ($cadastrado) {
-// 	header('location:/');
-// }

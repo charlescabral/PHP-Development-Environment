@@ -11,6 +11,7 @@
                     <li class="mdl-list__item mdl-list__item--two-line">
                         <span class="mdl-list__item-primary-content">
                             <i class="material-icons mdl-list__item-icon">person</i>
+                            <b><?=$user->id;?></b>
                             <?=$user->name;?>
                             <span class="mdl-list__item-sub-title"><?=$user->email;?></span>
                         </span>
@@ -19,7 +20,7 @@
                             <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="/user_edit?id=<?=$user->id;?>">
                                 <i class="material-icons">edit</i>
                             </a>
-                            <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="id=<?=$user->id;?>">
+                            <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="/user_delete?id=<?=$user->id;?>">
                                 <i class="material-icons">delete</i>
                             </a>
                         </span>
